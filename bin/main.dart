@@ -8,6 +8,7 @@ void main() {
   };
 
   app.text('Yo');
+  app.line(0, 0, 50, 50);
 
   app.run();
 }

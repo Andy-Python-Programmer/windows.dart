@@ -100,4 +100,12 @@ class Window {
 
     return 0;
   }
+
+  int line(x1, y1, x2, y2) {
+    painter.add((hdc, hWnd) {
+      MoveToEx(hdc, x1, y1, nullptr);
+      LineTo(hdc, x2, y2);
+    });
+    return 0;
+  }
 }
