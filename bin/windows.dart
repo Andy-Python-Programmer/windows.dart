@@ -9,12 +9,15 @@ class Window {
   final name;
   final String title;
   static Function initState;
+  static Function disposeState;
 
   static List painter = [];
 
   static int _mainWindowProc(int hWnd, int uMsg, int wParam, int lParam) {
     switch (uMsg) {
       case WM_DESTROY:
+        disposeState == null ? () {} : disposeState();
+
         PostQuitMessage(0);
         return 0;
 

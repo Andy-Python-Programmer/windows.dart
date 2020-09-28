@@ -1,11 +1,14 @@
-name: Windows
-description: A simple command-line application.
+name: windows_dart
+description: Create native guis in dart!
+version: 0.0.1
+repository: https://github.com/Andy-Python-Programmer/windows.dart
 
 environment:
   sdk: '>=2.8.1 <3.0.0'
 
 dependencies:
- win32: any
+ win32: ^1.7.3
+ ffi: ^0.1.3
 
 dev_dependencies:
   pedantic: ^1.9.0
