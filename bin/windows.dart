@@ -102,4 +102,19 @@ class Window {
     });
     return 0;
   }
+
+  void block(int x1, int y1, int x2, int y2, int color) {
+    painter.add((hdc, hWnd) {
+      final rect = RECT.allocate();
+      final hBrush = CreateSolidBrush(color);
+      rect.left = x1;
+      rect.right = x1 + x2;
+      rect.top = y1;
+      rect.bottom = y1 + y2;
+
+      FillRect(hdc, rect.addressOf, hBrush);
+
+      DeleteObject(hBrush);
+    });
+  }
 }
