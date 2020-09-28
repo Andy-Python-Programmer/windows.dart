@@ -54,21 +54,21 @@ class Window {
 
   int run() {
     final hWnd = CreateWindowEx(
-      0, // Optional window styles.
-      wc.lpszClassName, // Window class
-      TEXT(title ?? 'App'), // Window caption
-      WS_OVERLAPPEDWINDOW, // Window style
+        0, // Optional window styles.
+        wc.lpszClassName, // Window class
+        TEXT(title ?? 'App'), // Window caption
+        WS_OVERLAPPEDWINDOW, // Window style
 
-      // Size and position
-      CW_USEDEFAULT,
-      CW_USEDEFAULT,
-      CW_USEDEFAULT,
-      CW_USEDEFAULT,
-      NULL, // Parent window
-      NULL, // Menu
-      hInstance, // Instance handle
-      nullptr // Additional application data
-    );
+        // Size and position
+        CW_USEDEFAULT,
+        CW_USEDEFAULT,
+        CW_USEDEFAULT,
+        CW_USEDEFAULT,
+        NULL, // Parent window
+        NULL, // Menu
+        hInstance, // Instance handle
+        nullptr // Additional application data
+        );
 
     if (hWnd == 0) {
       final error = GetLastError();

@@ -6,7 +6,7 @@ Future sleep() {
 
 void main() async {
   var app = Window('App', title: 'Windows!');
-  
+
   Window.initState = () {
     print('This is called when your gui is created!');
   };
