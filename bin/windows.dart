@@ -103,7 +103,7 @@ class Window {
     return 0;
   }
 
-  void block(int x1, int y1, int x2, int y2, int color) {
+  int block(int x1, int y1, int x2, int y2, int color) {
     painter.add((hdc, hWnd) {
       final rect = RECT.allocate();
       final hBrush = CreateSolidBrush(color);
@@ -116,5 +116,7 @@ class Window {
 
       DeleteObject(hBrush);
     });
+
+    return 0;
   }
 }
