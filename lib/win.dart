@@ -8,6 +8,8 @@ class Window {
 
   final name;
   final String title;
+  final int width;
+  final int height;
   static Function initState;
   static Function disposeState;
 
@@ -42,7 +44,7 @@ class Window {
     return DefWindowProc(hWnd, uMsg, wParam, lParam);
   }
 
-  Window(this.name, {this.title}) {
+  Window(this.name, this.width, this.height, {this.title}) {
     wc.hbrBackground = GetStockObject(WHITE_BRUSH);
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
     wc.hInstance = hInstance;
@@ -62,8 +64,8 @@ class Window {
         // Size and position
         CW_USEDEFAULT,
         CW_USEDEFAULT,
-        CW_USEDEFAULT,
-        CW_USEDEFAULT,
+        height,
+        width,
         NULL, // Parent window
         NULL, // Menu
         hInstance, // Instance handle
