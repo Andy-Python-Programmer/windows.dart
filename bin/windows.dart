@@ -85,17 +85,11 @@ class Window {
     return 0;
   }
 
-  int text(String text) {
+  int text(String text, x, y) {
     painter.add((hdc, hWnd) {
-      final rect = RECT.allocate();
-      GetClientRect(hWnd, rect.addressOf);
-      final msg = TEXT(text);
-
-      DrawText(
-          hdc, msg, -1, rect.addressOf, 37);
-
-      free(rect.addressOf);
-      free(msg);
+      final textPtr = TEXT(text);
+      TextOut(hdc, x, y, textPtr, text.length);
+      free(textPtr);
     });
 
     return 0;

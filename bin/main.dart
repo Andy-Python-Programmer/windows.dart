@@ -7,7 +7,7 @@ void main() {
     print('This is called when your gui is created!');
   };
 
-  app.text('Yo');
+  app.text('Yo', 100, 100);
   app.line(0, 0, 50, 50);
 
   app.run();
